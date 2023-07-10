@@ -6,7 +6,7 @@
 
 import { PassThrough } from "node:stream";
 
-import type { AppLoadContext, EntryContext } from "@remix-run/node";
+import type { AppLoadContext, EntryContext } from "@vercel/remix";
 import { Response } from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
 import isbot from "isbot";
