@@ -15,7 +15,7 @@ import { RemixServer } from "@remix-run/react";
 import { CacheProvider } from '@emotion/react'
 import { ServerStyleContext } from './config/chakra.context'
 import { createEmotionCache } from './config/createEmotionCache'
-import createEmotionServer from '@emotion/server/create-instance'
+// import createEmotionServer from '@emotion/server/create-instance'
 
 export default function (
   request: Request,
@@ -24,7 +24,7 @@ export default function (
   remixContext: EntryContext
 ) {
   const cache = createEmotionCache()
-  const { extractCriticalToChunks } = createEmotionServer(cache)
+  // const { extractCriticalToChunks } = createEmotionServer(cache)
 
   const html = renderToString(
     <ServerStyleContext.Provider value={null}>
@@ -34,19 +34,20 @@ export default function (
     </ServerStyleContext.Provider>
   )
 
-  const chunks = extractCriticalToChunks(html)
+  // const chunks = extractCriticalToChunks(html)
 
-  const markup = renderToString(
-    <ServerStyleContext.Provider value={chunks.styles}>
-      <CacheProvider value={cache}>
-        <RemixServer context={remixContext} url={request.url} />
-      </CacheProvider>
-    </ServerStyleContext.Provider>
-  )
+  // const markup = renderToString(
+  //   <ServerStyleContext.Provider value={chunks.styles}>
+  //     <CacheProvider value={cache}>
+  //       <RemixServer context={remixContext} url={request.url} />
+  //     </CacheProvider>
+  //   </ServerStyleContext.Provider>
+  // )
 
   responseHeaders.set('Content-Type', 'text/html')
   
-  return new Response(`<!DOCTYPE html>${markup}`, {
+  // return new Response(`<!DOCTYPE html>${markup}`, {
+  return new Response(`<!DOCTYPE html>${html}`, {
     status: responseStatusCode,
     headers: responseHeaders
   })
