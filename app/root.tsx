@@ -17,8 +17,6 @@ export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
-export const config = { runtime: 'edge' }
-
 const Document = withEmotionCache(({ children }: { children: React.ReactNode }, emotionCache) => {
   const serverStyleData = useContext(ServerStyleContext)
   const clientStyleData = useContext(ClientStyleContext)
