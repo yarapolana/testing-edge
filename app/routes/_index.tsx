@@ -1,3 +1,4 @@
+import { Heading } from '@chakra-ui/react'
 import type { V2_MetaFunction } from "@vercel/remix";
 
 export const config = { runtime: 'edge' };
@@ -12,7 +13,7 @@ export const meta: V2_MetaFunction = () => {
 export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
+      <Heading color="red.400">Welcome to Remix</Heading>
       <ul>
         <li>
           <a
