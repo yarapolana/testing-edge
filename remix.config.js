@@ -10,21 +10,7 @@ module.exports = {
   // assetsBuildDirectory: "public/build",
   // publicPath: "/build/",
   serverModuleFormat: "cjs",
-  serverDependenciesToBundle: [
-    /^stream.*/,
-  ],
-  serverNodeBuiltinsPolyfill: {
-    modules: {
-      modules: {
-        path: "empty",
-        fs: "empty",
-        url: true,
-        stream: true,
-        events: true,
-        util: true,
-      },
-    },
-  },
+  serverNodeBuiltinsPolyfill: "all",
   future: {
     v2_dev: true,
     v2_errorBoundary: true,
