@@ -9,7 +9,6 @@ import {
   type EntryContext
 } from "@vercel/remix";
 // import { Response } from "@remix-run/node";
-// import { Response } from "@remix-run/cloudflare";
 import { renderToString } from 'react-dom/server'
 import { RemixServer } from "@remix-run/react";
 import { CacheProvider } from '@emotion/react'
