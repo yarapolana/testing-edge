@@ -13,8 +13,8 @@ import { renderToString } from 'react-dom/server'
 import { RemixServer } from "@remix-run/react";
 import { CacheProvider } from '@emotion/react'
 import { ServerStyleContext } from './config/chakra.context'
-import { createEmotionCache } from './config/createEmotionCache'
-import createEmotionServer from '@emotion/server/create-instance'
+import { createEmotionCache, extractCriticalToChunks } from './config/createEmotionCache'
+// import createEmotionServer from '@emotion/server/create-instance'
 
 export default function (
   request: Request,
@@ -23,7 +23,7 @@ export default function (
   remixContext: EntryContext
 ) {
   const cache = createEmotionCache()
-  const { extractCriticalToChunks } = createEmotionServer(cache)
+  // const { extractCriticalToChunks } = createEmotionServer(cache)
 
   const html = renderToString(
     <ServerStyleContext.Provider value={null}>
