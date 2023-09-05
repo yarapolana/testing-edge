@@ -11,7 +11,16 @@ module.exports = {
   // publicPath: "/build/",
   serverModuleFormat: "cjs",
   serverNodeBuiltinsPolyfill: {
-    modules: {},
+    modules: {
+      modules: {
+        path: "empty",
+        fs: "empty",
+        url: true,
+        stream: true,
+        events: true,
+        util: true,
+      },
+    },
   },
   future: {
     v2_dev: true,
