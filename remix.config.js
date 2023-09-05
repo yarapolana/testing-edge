@@ -10,7 +10,9 @@ module.exports = {
   // assetsBuildDirectory: "public/build",
   // publicPath: "/build/",
   serverModuleFormat: "cjs",
-  serverNodeBuiltinsPolyfill: true,
+  serverNodeBuiltinsPolyfill: {
+    modules: {},
+  },
   future: {
     v2_dev: true,
     v2_errorBoundary: true,
