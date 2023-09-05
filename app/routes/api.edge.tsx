@@ -1,6 +1,6 @@
 import type { ActionArgs } from '@vercel/remix'
 
-export const config = { runtime: 'edge' };
+// export const config = { runtime: 'edge' };
 
 export const loader = async () => {
   return null
